@@ -8,7 +8,7 @@ It takes the annotations already used for the previous model, adds the newly val
 
 1. Reads the new annotation files and keeps only the validated lines.
 2. Merges them with the previous annotations.
-3. Splits the data **by video**: all annotations of a video go to the same set, so the model is never validated on videos it has seen. Videos are assigned so that each class is as close as possible to 80 % training / 20 % validation. Classes listed in `EXCLUDED` are left out.
+3. Splits the data **by video**: all annotations of a video go to the same set, so the model is never validated on videos it has seen. Videos are assigned so that each class is as close as possible to 80 % training / 20 % validation, using a greedy algorithm followed by an arrangement step on the videos of under-represented classes. Classes listed in `EXCLUDED` are left out.
 
 ## Input data
 
